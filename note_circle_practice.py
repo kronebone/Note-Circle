@@ -21,19 +21,21 @@ class NoteCircle:
         self.pos = randint(0, 11)
         print('Press Esc to quit')
         print('Use left and right arrows to move through the note circle')
-        print(self.note_circle[self.pos])
+        print(self.note_circle[self.pos])  # random start position in note circle
 
     def on_release(self, key):
-        if key == keyboard.Key.esc:
+        # pressing left or right arrow moves position in the note circle and prints the newly selected note
+        if key == keyboard.Key.esc:  # escape key to quit
             return False
-        elif key == keyboard.Key.left:
+        elif key == keyboard.Key.left:  # left arrow decrements the position var
             self.move_note(-1)
             print(self.note_circle[self.pos])
-        elif key == keyboard.Key.right:
+        elif key == keyboard.Key.right:  # right arrow increments the position var
             self.move_note(1)
             print(self.note_circle[self.pos])
 
     def move_note(self, x):
+        # changing var that indicates position in the note circle, wraps to beginning or end
         self.pos += x
         if self.pos == -1:
             self.pos = self.note_circle[-1]
