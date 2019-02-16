@@ -4,7 +4,7 @@ from random import randint
 class NoteCircleGuesser:
     def __init__(self, step=3, guesses=10):
         self.step = step  # number of semi tones further in the note circle the answer will be
-        self.guesses = guesses
+        self.guesses = guesses  # number of guesses before displaying results
         self.sharp = '♯'
         self.flat = '♭'
         self.note_circle = ['A',
