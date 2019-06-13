@@ -37,8 +37,8 @@ class NoteCircle:
     def move_note(self, x):
         # changing var that indicates position in the note circle, wraps to beginning or end
         self.pos += x
-        if self.pos == -1:
-            self.pos = self.note_circle[-1]
+        if self.pos < -1:
+            self.pos = len(self.note_circle) - 2
         elif self.pos == len(self.note_circle):
             self.pos = 0
 
